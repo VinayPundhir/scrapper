@@ -116,7 +116,7 @@
 
  go:function (){
   if (this.url!=""){
-   axios.get('http://127.0.0.1:8000/search/'+this.url)
+   axios.get(window.location.href+this.url)
    .then(resp=>(
    this.status= resp['data']['response']['status'],
    this.code= resp['data']['response']['content']['code'],
