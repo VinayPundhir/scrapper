@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+   <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<body>
+
+  <div  id="app" class="container jumbotron" style="background-color:white;color:grey;box-shadow:1px 5px 1px 2px">
+   <div class="row">
+    <div class="col-md-11">
+     <input v-model="url" type="text" class="form-control" placeholder="search by name..."/>
+    </div>
+    <div class="col-md-1">
+     <img  v-on:click="go" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5P4Nieb-DeLkwX6SlEH3AFLH9L-DGJ67bkA&usqp=CAU" style="color:#26a5da;box-shadow:2px 3px 2px 3px;border-radius:10px;width:35px;height:40px"alt="search"/>
+    </div>
+   </div>
+   </br>
+   <div class="row">
+    <table  class="table table-hover  table-striped" >
+     <thead class="text-white" style="background-color:#26a5da" >
+      <th><span  v-if="status=='200'">[[Name]]</span></th><th><span></span></th><th><span></span></th><th><span></span></th>
+     </thead>
+     <p v-if="status==0" >write something</p>
+     <p v-if="status=='503'" >unable to connect</p>
+     <p v-if="status=='404'" >wrong name entered</p>
+     <tbody v-if="status=='200'" >
+      <tr>
+       <td>Code</td>
+       <td>Name</td>
+       <td>Group</td>
+       <td>Type</td>
+      </tr>
+       <tr >
+        <td>[[ code ]]</td>
+       <td>[[ Name ]]</td>
+       <td>[[group]]</td>
+       <td>[[type]]</td>
+       </tr>
+      <tr>
+       <td>Open</td>
+       <td>High</td>
+       <td>Low</td>
+       <td>Close</td>
+      </tr>
+      <tr>
+       <td>[[open]]</td>
+       <td>[[high]]</td>
+       <td>[[low]]</td>
+       <td>[[close]]</td>
+      </tr>
+      <tr>
+       <td>Last</td>
+       <td>Prevclose</td>
+       <td>Trades</td>
+       <td>Shares</td>
+      </tr>
+      <tr>
+       <td>[[last]]</td>
+       <td>[[prevclose]]</td>
+       <td>[[trades]]</td>
+       <td>[[shares]]</td>
+      </tr>
+      <tr>
+       <td>Turnover</td> 
+       <td>Tdcloindi</td>
+      </tr>
+      <tr>
+       <td>[[turnover]]</td> 
+       <td>[[tdcloindi]]</td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+
+</body>
+
+<script>
+ 
+ var app = new Vue({
+  delimiters:["[[","]]"],
+  el: '#app',
+
+  data :{
+      url:"",
+      status:0,
+      code:"",
+      Name :"",
+      group:"",
+      type:"",
+      open:"",
+      high:"",
+      low:"",
+      close:"",
+      last:"",
+      prevclose:"",
+      trades:"",
+      shares:"",
+      turnover:"",
+      tdcloindi:"",
+     
+     
+  },
+ methods:{
+
+ go:function (){
+  if (this.url!=""){
+   axios.get('http://127.0.0.1:8000/search/'+this.url)
+   .then(resp=>(
+   this.status= resp['data']['response']['status'],
+   this.code= resp['data']['response']['content']['code'],
+   this.Name= resp['data']['response']['content']['name'],
+   this.group= resp['data']['response']['content']['group'],
+   this.type= resp['data']['response']['content']['type'],
+   this.open= resp['data']['response']['content']['open'],
+   this.high= resp['data']['response']['content']['high'],
+   this.low= resp['data']['response']['content']['low'],
+   this.close= resp['data']['response']['content']['close'],
+   this.last= resp['data']['response']['content']['last'],
+   this.prevclose= resp['data']['response']['content']['prevclose'],
+   this.trades= resp['data']['response']['content']['trades'],
+   this.shares= resp['data']['response']['content']['shares'],
+   this.turnover= resp['data']['response']['content']['turnover'],
+   this.tdcloindi= resp['data']['response']['content']['tdcloindi']
+  ))
+  }  
+
+  }
+ }
+ 
+
+})
+
+   
+
+
+ 
+</script>
+
+ 
+
+
+</html>
