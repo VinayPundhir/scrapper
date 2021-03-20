@@ -128,5 +128,9 @@ USE_TZ = True
 DISABLE_COLLECTSTATIC=1
 STATIC_URL = '/static/'
 
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
+
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 django_heroku.settings(locals())
