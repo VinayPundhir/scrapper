@@ -127,4 +127,5 @@ USE_TZ = True
 DISABLE_COLLECTSTATIC=1
 STATIC_URL = '/static/'
 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 django_heroku.settings(locals())
