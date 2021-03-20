@@ -1,3 +1,8 @@
+import django_heroku
+...
+# All of your settings here
+...
+django_heroku.settings(locals())
 """
 Django settings for scrapper project.
 
