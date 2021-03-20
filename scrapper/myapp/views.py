@@ -1,7 +1,8 @@
 from django.shortcuts import render
 import redis
 import json
-from django.http import JsonResponse
+from django.http import JsonResponse ,HttpResponse
+from .download_csv import update_redis_data
 # Create your views here.
 
 def home(req):
@@ -27,3 +28,17 @@ def connect_and_find(name):
 def search(req,name):
  res=connect_and_find(name)
  return JsonResponse({'response':res})
+
+
+def download_today_data(req,key):
+ print(key,'your sent')
+ if key=="jd83b*^$n{4)}>;gro67bjk:][49nv3&847vm@v94$kjrg49asgrf437op45nh":
+  try:
+   update_redis_data()
+   return HttpResponse('done')
+  except:
+   return HttpResponse('not-done')
+ else:
+   return HttpResponse('not-done')
+   
+  
