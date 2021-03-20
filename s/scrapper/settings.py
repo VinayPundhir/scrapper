@@ -1,8 +1,7 @@
 import django_heroku
-...
+
 # All of your settings here
-...
-django_heroku.settings(locals())
+
 """
 Django settings for scrapper project.
 
@@ -127,3 +126,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 DISABLE_COLLECTSTATIC=1
 STATIC_URL = '/static/'
+
+django_heroku.settings(locals())
