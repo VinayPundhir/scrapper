@@ -3,6 +3,24 @@
 Live @ https://myscrappingapp.herokuapp.com
 
 
+# Api
+_________________________________________________
+ replace COMPANY_NAME with the name you search
+
+ get json response
+
+- https://myscrappingapp.herokuapp.com/name/COMPANY_NAME
+
+ get csv file of equity result
+
+- https://myscrappingapp.herokuapp.com/download/COMPANY_NAME
+
+ api to manually update the redis with new data
+
+- https://myscrappingapp.herokuapp.com/update/APIKEY
+
+ 
+
 # Deployment Steps 
 _______________________________
 
@@ -56,6 +74,7 @@ Install requirements.txt using command
 - pip3 install -r requirements.txt
 
 
+
 After successfull installation .
 
 Add "127.0.0.1" in ALLOWED_HOSTS list in scrapper/scrapper/settings.py
@@ -67,23 +86,7 @@ Open terminal run command
 - python3 manage.py runserver 
 
 
-# Api
-_________________________________________________
- replace COMPANY_NAME with the name you search
 
- get json response
-
-- https://myscrappingapp.herokuapp.com/name/COMPANY_NAME
-
- get csv file of equity result
-
-- https://myscrappingapp.herokuapp.com/download/COMPANY_NAME
-
- api to manually update the redis with new data
-
-- https://myscrappingapp.herokuapp.com/update/APIKEY
-
- 
 
 
 
