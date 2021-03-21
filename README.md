@@ -5,6 +5,10 @@ Live @ https://myscrappingapp.herokuapp.com
 
 # deployment steps :
 _______________________________
+Create a Redis account on Redislabs.com or somewhere else.
+
+write the redis account credentials inside ProjCred.py file in the root directory of project.
+
 Create an app on Heroku with app name (in this case myscrappingapp)
  - myscrappingapp
 
@@ -54,6 +58,8 @@ Open terminal run command
  - python3 manage.py runserver 
 
 **Happy deploy**
+
+
  
 
 
