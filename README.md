@@ -3,7 +3,7 @@
 Live @ https://myscrappingapp.herokuapp.com
 
 
-# deployment steps 
+# Deployment Steps 
 _______________________________
 
 Create a Redis account on https://Redislabs.com or somewhere else.
@@ -38,14 +38,14 @@ After successfull deployment open url to fetch details about equity bhav
 
 
 
-# ERRORS 
+# Errors
 ____________________________
 
 if during deployment error occurs go to requirement.txt and try to change the version of module  According to Heroku suggest.
 
 
 
-# Offline deployment
+# Offline Deployment
 ______________________________
 Download the project using git command
  
