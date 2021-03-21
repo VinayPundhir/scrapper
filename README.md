@@ -1,4 +1,4 @@
-# Project Name Python Webscraping App :
+# Python Webscraping App :
 
 
 
