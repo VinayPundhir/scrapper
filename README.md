@@ -62,10 +62,12 @@ which sould point to update api
 
 - https://myscrappingapp.herokuapp.com/update/APIKEY
 
-replace api key with orginal key from scrapper/settings.py
-key should be found as 
+replace APIKEY with orginal key placed in project file scrapper/settings.py
 
 - RKEY
+
+if cronjob is created on the same hosting plateform then uncomment
+worker in Procfile and set schedule time in update.py.
 
 
 # Errors
