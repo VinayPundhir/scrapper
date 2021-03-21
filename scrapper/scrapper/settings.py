@@ -25,7 +25,7 @@ SECRET_KEY = '3%d+-clj=cc^rv$)=yz-nf4ehg4od-nsxo213zj&1%qmb=3l&-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['myscrappingapp.herokuapp.com']
+ALLOWED_HOSTS = ['myscrappingapp.herokuapp.com','127.0.0.1']
 
 
 # Application definition
