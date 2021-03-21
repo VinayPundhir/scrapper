@@ -3,6 +3,8 @@
 Live @ https://myscrappingapp.herokuapp.com
 
 
+
+
 # Api
 _________________________________________________
  replace COMPANY_NAME with the name you search
@@ -20,6 +22,7 @@ _________________________________________________
 - https://myscrappingapp.herokuapp.com/update/APIKEY
 
  
+
 
 # Deployment Steps 
 _______________________________
@@ -56,10 +59,13 @@ After successfull deployment open url to fetch details about equity bhav
 
 
 
+
 # Errors
 ____________________________
 
 if during deployment error occurs go to requirement.txt and try to change the version of module  According to Heroku suggest.
+
+
 
 
 
