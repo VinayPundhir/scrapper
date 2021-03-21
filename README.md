@@ -1,9 +1,9 @@
-#Python Webscraping App :
+# Python Webscraping App :
 
 Live @ https://myscrappingapp.herokuapp.com
 
 
-#deployment steps :
+# deployment steps :
 _______________________________
 
 Create a Redis account on https://Redislabs.com or somewhere else.
@@ -38,7 +38,7 @@ After successfull deployment open url to fetch details about equity bhav
 
 
 
-#ERRORS :
+# ERRORS :
 ____________________________
 
 if during deployment error occurs go to requirement.txt and try to change the version of module  According to Heroku suggest.
