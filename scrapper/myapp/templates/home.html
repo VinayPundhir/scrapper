@@ -5,9 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     
-    <!--pdf modules-->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+   
 
     <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -32,7 +30,7 @@
    </br>
   <div class="row">
    <div class="col table-responsive">
-    <table  id="invoice" class="table table-hover  table-striped" >
+    <table   class="table table-hover  table-striped" >
      <thead class="text-white" style="background-color:#26a5da" >
       <th><span  v-if="status=='200'">[[Name]]</span></th>
       <th><span></span>
@@ -129,18 +127,9 @@
  methods:{
 
  download:function () {
-            html2canvas(document.getElementById('invoice'), {
-                onrendered: function (canvas) {
-                    var data = canvas.toDataURL();
-                    var docDefinition = {
-                        content: [{
-                            image: data,
-                            width: 500
-                        }]
-                    };
-                    pdfMake.createPdf(docDefinition).download("invoice.pdf");
-                }
-            });
+            window.open(window.location.href+'download/'+this.url)
+   
+
         },
 
  go:function (){

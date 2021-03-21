@@ -21,4 +21,5 @@ urlpatterns = [
     path('',views.home,name="home"),
     path('name/<str:name>',views.search,name="search"),
     path('update/<str:key>',views.download_today_data,name="download_today_data"),
+    path('download/<str:name>',views.download,name="download"),
 ]

@@ -3,6 +3,8 @@ import redis
 import json
 from django.http import JsonResponse ,HttpResponse
 from .download_csv import update_redis_data
+import csv
+
 # Create your views here.
 
 def home(req):
@@ -41,4 +43,21 @@ def download_today_data(req,key):
  else:
    return HttpResponse('not-done')
    
-  
+def remove_space(lst):
+ lst=list(lst)
+ for i,v in enumerate(lst):
+  lst[i]=str(v).strip()
+
+ return lst 
+
+
+def download(req,name):
+ data=connect_and_find(str(name))
+ response=HttpResponse(content_type='text/csv')
+ data=data["content"]
+ writer=csv.writer(response)
+ writer.writerow(remove_space(data.keys()))
+ writer.writerow(remove_space(data.values()))
+ response['Content-Disposition']='attachment; filename="results.csv"'
+ return response
+ return None
