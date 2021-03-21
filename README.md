@@ -1,4 +1,4 @@
-# Python Webscraping App 
+# Python/Django Webscraping App 
 
 Live @ https://myscrappingapp.herokuapp.com
 
