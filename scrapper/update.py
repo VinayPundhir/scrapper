@@ -95,7 +95,7 @@ def update_redis_data():
 
 #schedule.every().day.at("02:22").do(update_redis_data,'It is 01:00')
 
-schedule.every(10).seconds.do(update_redis_data)
+schedule.every(20).seconds.do(update_redis_data)
 
 while True: 
  # Checks whether a scheduled task  
