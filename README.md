@@ -70,11 +70,11 @@ Open terminal run command
 # Api
 _________________________________________________
 
- ## get json response
+ ### get json response
 
  - https://myscrappingapp.herokuapp.com/name/COMPANY_NAME
 
-#get csv file of equity result
+ ## get csv file of equity result
 
  - https://myscrappingapp.herokuapp.com/download/COMPANY_NAME
 
