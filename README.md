@@ -12,20 +12,20 @@ write the redis account credentials inside settings.py file @ scrapper/scrapper/
 
 Create an app on Heroku with app name (in this case myscrappingapp)
  
- - myscrappingapp
+- myscrappingapp
 
 Click on open app to see url of this project (In this case myscrappingapp.herokuapp.com)
 
 Go to project settings file inside scrapper/scrapper/settings.py then add Heroku given url in ALLOWED_HOSTS list
 
- - ALLOWED_HOSTS=['myscrappingapp.herokuapp.com']
+- ALLOWED_HOSTS=['myscrappingapp.herokuapp.com']
 
 
 Open  deploy tab in Heroku , select deployment method as GitHub
 
 Go to app connect to GitHub, search for repository 
  
- - scrapper
+- scrapper
 
 Select the auto deployement.
 
@@ -33,7 +33,7 @@ At last select deploy branch button  in manual deploy section .
 
 After successfull deployment open url to fetch details about equity bhav 
 
- - Using appropriate name.
+- Using appropriate name.
 
 
 
@@ -49,11 +49,11 @@ if during deployment error occurs go to requirement.txt and try to change the ve
 ______________________________
 Download the project using git command
  
- - git clone https://GitHub.com/VinayPundhir/scrapper
+- git clone https://GitHub.com/VinayPundhir/scrapper
 
 Install requirements.txt using command
  
- - pip3 install -r requirements.txt
+- pip3 install -r requirements.txt
 
 
 After successfull installation .
@@ -64,24 +64,24 @@ Go to project root directory where manage.py exists
 
 Open terminal run command
  
- - python3 manage.py runserver 
+- python3 manage.py runserver 
 
 
 # Api
 _________________________________________________
- ## replace COMPANY_NAME with the name you search
+ replace COMPANY_NAME with the name you search
 
- ### get json response
+ get json response
 
- - https://myscrappingapp.herokuapp.com/name/COMPANY_NAME
+- https://myscrappingapp.herokuapp.com/name/COMPANY_NAME
 
- ### get csv file of equity result
+ get csv file of equity result
 
- - https://myscrappingapp.herokuapp.com/download/COMPANY_NAME
+- https://myscrappingapp.herokuapp.com/download/COMPANY_NAME
 
- ### api to manually update the redis with new data
+ api to manually update the redis with new data
 
- - https://myscrappingapp.herokuapp.com/update/APIKEY
+- https://myscrappingapp.herokuapp.com/update/APIKEY
 
  
 
