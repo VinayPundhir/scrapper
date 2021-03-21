@@ -7,9 +7,9 @@ Live @ https://myscrappingapp.herokuapp.com
 
 # Api
 _________________________________________________
- replace COMPANY_NAME with the name you search
+ *replace COMPANY_NAME with the name you search
 
- get json response
+ _get json response
 
 - https://myscrappingapp.herokuapp.com/name/COMPANY_NAME
 
