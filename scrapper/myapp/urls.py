@@ -18,8 +18,19 @@ from django.urls import path,include
 from . import views 
 
 urlpatterns = [
+    #hompage
+ 
     path('',views.home,name="home"),
+
+    #search by name
+
     path('name/<str:name>',views.search,name="search"),
+
+    # update redis database by calling using key
+
     path('update/<str:key>',views.download_today_data,name="download_today_data"),
+
+    #download using the equity name
+
     path('download/<str:name>',views.download,name="download"),
 ]

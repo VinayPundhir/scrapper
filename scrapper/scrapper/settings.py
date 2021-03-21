@@ -122,3 +122,29 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+
+
+
+
+
+# Redis credentials
+
+RHOST = "redis-19501.c11.us-east-1-2.ec2.cloud.redislabs.com" #HOST
+
+RPORT = "19501"                                               #PORT
+
+RDB   =   0                                                   # database 0 means first database         
+
+RPASSWORD= "qhArklGwUoE0JAaGlVbccw4nIvR0L23u"                 #PASSWORD
+
+
+
+
+#key ( used to call the api to update redis with new data )
+
+RKEY = "jd83b*^$n{4)}>;gro67bjk:][49nv3&847vm@v94$kjrg49asgrf437op45nh" 
+
+	

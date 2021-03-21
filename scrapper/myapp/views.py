@@ -5,7 +5,17 @@ from django.http import JsonResponse ,HttpResponse
 from .download_csv import update_redis_data
 import csv
 
+#importing ProjConfig
+from django.conf import settings as ds
+HOST=ds.RHOST
+DB=ds.RDB
+PASSWORD=ds.RPASSWORD
+PORT=ds.RPORT 
+REDIS_KEY=ds.RKEY
+
+
 # Create your views here.
+
 
 def home(req):
  return render(req,'home.html')
@@ -15,8 +25,7 @@ def connect_and_find(name):
  name=str(name).upper()
  res=None
  try:
-  con=redis.Redis(host="redis-19501.c11.us-east-1-2.ec2.cloud.redislabs.com",
-  port="19501",db=0,password="qhArklGwUoE0JAaGlVbccw4nIvR0L23u")
+  con=redis.Redis(host=HOST,port=PORT,db=DB,password=PASSWORD)
   if con.exists(name):
    res={'status':200,'content':json.loads(con.get(name).decode('UTF-8'))}
   else:
@@ -34,14 +43,14 @@ def search(req,name):
 
 def download_today_data(req,key):
  print(key,'your sent')
- if key=="jd83b*^$n{4)}>;gro67bjk:][49nv3&847vm@v94$kjrg49asgrf437op45nh":
+ if key==REDIS_KEY:
   try:
    update_redis_data()
-   return HttpResponse('done')
+   return JsonResponse({'response':'updated successfully'})
   except:
-   return HttpResponse('not-done')
+   return JsonResponse({'response':"could not update"})
  else:
-   return HttpResponse('not-done')
+   return JsonResponse({'response':'wrong key passed'})
    
 def remove_space(lst):
  lst=list(lst)
@@ -53,11 +62,15 @@ def remove_space(lst):
 
 def download(req,name):
  data=connect_and_find(str(name))
- response=HttpResponse(content_type='text/csv')
- data=data["content"]
- writer=csv.writer(response)
- writer.writerow(remove_space(data.keys()))
- writer.writerow(remove_space(data.values()))
- response['Content-Disposition']='attachment; filename="results.csv"'
- return response
- return None
+ if data['status']==200:
+  response=HttpResponse(content_type='text/csv')
+  data=data["content"]
+  writer=csv.writer(response)
+  writer.writerow(remove_space(data.keys()))
+  writer.writerow(remove_space(data.values()))
+  response['Content-Disposition']='attachment; filename="results.csv"'
+  return response
+ else:
+  return JsonResponse({'response':data})
+
+

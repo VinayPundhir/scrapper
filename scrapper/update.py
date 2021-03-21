@@ -6,6 +6,12 @@ import json
 import schedule
 import time
 
+#importing ProjConfig
+import scrapper.settings as ds
+HOST=ds.RHOST
+DB=ds.RDB
+PASSWORD=ds.RPASSWORD
+PORT=ds.RPORT 
 
 
 def update_redis_data():
@@ -63,8 +69,7 @@ def update_redis_data():
 
 	try:
 	 print('trying to connect...')
-	 con=redis.Redis(host="redis-19501.c11.us-east-1-2.ec2.cloud.redislabs.com",
-         port="19501",db=0,password="qhArklGwUoE0JAaGlVbccw4nIvR0L23u")
+	 con=redis.Redis(host=HOST,port=PORT,db=DB,password=PASSWORD)
 	 print('connection established')
 	 con.flushall()
 
@@ -95,10 +100,9 @@ def update_redis_data():
 
 schedule.every().day.at("12:30").do(update_redis_data)
 
-#schedule.every(20).seconds.do(update_redis_data)
+#schedule.every(10).seconds.do(update_redis_data)              #uncomment to check script works 
 
 while True: 
- # Checks whether a scheduled task  
- # is pending to run or not 
+ # Checks whether a scheduled task  is pending to run or not 
  schedule.run_pending() 
  time.sleep(1)
