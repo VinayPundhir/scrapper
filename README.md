@@ -56,8 +56,16 @@ After successfull deployment open url to fetch details about equity bhav
 
 - Using appropriate name.
 
+Get a cronjob account somewhere eg. https://cron-job.org
 
+which sould point to update api 
 
+- https://myscrappingapp.herokuapp.com/update/APIKEY
+
+replace api key with orginal key from scrapper/settings.py
+key should be found as 
+
+- RKEY
 
 
 # Errors
