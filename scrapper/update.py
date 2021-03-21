@@ -93,7 +93,7 @@ def update_redis_data():
 	 con.flushall()
 	 print('data removed')
 
-schedule.every().day.at("11:25").do(update_redis_data)
+schedule.every().day.at("12:30").do(update_redis_data)
 
 #schedule.every(20).seconds.do(update_redis_data)
 
