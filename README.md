@@ -7,17 +7,17 @@ Live @ https://myscrappingapp.herokuapp.com
 
 # Api
 _________________________________________________
- * replace COMPANY_NAME with the name you search
+replace COMPANY_NAME with the name you search
 
- _ get json response
+get json response
 
 - https://myscrappingapp.herokuapp.com/name/COMPANY_NAME
 
- get csv file of equity result
+get csv file of equity result
 
 - https://myscrappingapp.herokuapp.com/download/COMPANY_NAME
 
- api to manually update the redis with new data
+api to manually update the redis with new data
 
 - https://myscrappingapp.herokuapp.com/update/APIKEY
 
