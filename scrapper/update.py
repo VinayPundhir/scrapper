@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup as bs
 import pandas as pd
 import redis
 import json
+import schedule
+import time
 
 
 
@@ -91,4 +93,12 @@ def update_redis_data():
 	 con.flushall()
 	 print('data removed')
 
+#schedule.every().day.at("02:22").do(update_redis_data,'It is 01:00')
 
+schedule.every(10).minutes.do(update_redis_data,"I am coming")
+
+while True: 
+ # Checks whether a scheduled task  
+ # is pending to run or not 
+ schedule.run_pending() 
+ time.sleep(1)
