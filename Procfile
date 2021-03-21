@@ -1,2 +1,2 @@
-web: gunicorn scrapper.scrapper.wsgi --log-file -
-worker: python scrapper.update.py
+web: gunicorn scrapper.wsgi --log-file -
+worker: python update.py
