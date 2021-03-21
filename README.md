@@ -70,7 +70,7 @@ Open terminal run command
 # Api
 _________________________________________________
 
-#get json response
+ ## get json response
 
  - https://myscrappingapp.herokuapp.com/name/COMPANY_NAME
 
