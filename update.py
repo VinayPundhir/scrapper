@@ -98,9 +98,13 @@ def update_redis_data():
 	 con.flushall()
 	 print('data removed')
 
+
+
+# set schedule time in UTC
+
 schedule.every().day.at("12:30").do(update_redis_data)
 
-#schedule.every(10).seconds.do(update_redis_data)              #uncomment to check script works 
+
 
 while True: 
  # Checks whether a scheduled task  is pending to run or not 
