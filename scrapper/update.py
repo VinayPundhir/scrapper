@@ -93,9 +93,9 @@ def update_redis_data():
 	 con.flushall()
 	 print('data removed')
 
-#schedule.every().day.at("02:22").do(update_redis_data,'It is 01:00')
+schedule.every().day.at("11:25").do(update_redis_data)
 
-schedule.every(20).seconds.do(update_redis_data)
+#schedule.every(20).seconds.do(update_redis_data)
 
 while True: 
  # Checks whether a scheduled task  
