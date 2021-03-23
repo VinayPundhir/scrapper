@@ -6,8 +6,6 @@ Live @ https://myscrappingapp.herokuapp.com
 
 ![Screenshot_20210323-225751](https://user-images.githubusercontent.com/51248042/112190756-50157d00-8c2b-11eb-88a2-ac4df469001e.png)
 
-
-
 ![Screenshot_20210323-224916](https://user-images.githubusercontent.com/51248042/112189479-1132f780-8c2a-11eb-9ecb-686e67da2b01.png)
 
 # Api
