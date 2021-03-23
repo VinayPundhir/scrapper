@@ -1,4 +1,5 @@
 # Python/Django Webscraping App 
+( Latest Stock Market Equity information )
 
 Live @ https://myscrappingapp.herokuapp.com
 
